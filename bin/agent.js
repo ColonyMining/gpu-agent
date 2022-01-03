@@ -1,4 +1,4 @@
-import { listGpus, updateTemperature } from "../lib/Gpu";
+const { listGpus, updateTemperature } = require("../lib/Gpu");
 
 setInterval(() => {
   const gpus = listGpus();
