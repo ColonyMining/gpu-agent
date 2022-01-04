@@ -4,7 +4,7 @@ const { analyzeTemperature } = require("../lib/TemperatureAnalyzer");
 const DEFAULT_INTERVAL = 30_000;
 const interval = DEFAULT_INTERVAL;
 
-const DEFAULT_TEMPERATURE = 60;
+const DEFAULT_TEMPERATURE = 65;
 const temperature = DEFAULT_TEMPERATURE;
 
 const gpus = listGpus();
