@@ -1,4 +1,5 @@
 const { listGpus, readPowerTemperature, readFanSpeed, readOverclock } = require("../lib/Gpu");
+const { gpuToConfig } = require("../lib/Config");
 
 const gpus = listGpus();
 
