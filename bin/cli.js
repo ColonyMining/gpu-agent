@@ -1,6 +1,6 @@
 const { Engine } = require("aux4");
 const Agent = require("./agent");
-const Config = require("aux4/lib/Config");
+const Config = require("../lib/Config");
 
 const config = {
   profiles: [
