@@ -27,6 +27,8 @@
   },
   "homepage": "https://github.com/ColonyMining/gpu-agent#readme",
   "dependencies": {
+    "aux4": "^3.0.1",
+    "colors": "^1.4.0",
     "moment": "^2.29.1"
   }
 }
