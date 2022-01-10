@@ -28,7 +28,7 @@ const config = {
       commands: [
         {
           value: "save",
-          execute: () => Config.save(),
+          execute: params => Config.save(params.gpus),
           help: {
             description: "save current configuration",
             variables: [
