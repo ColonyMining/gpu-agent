@@ -28,7 +28,7 @@ const config = {
       commands: [
         {
           value: "save",
-          execute: params => Config.save(params.gpus),
+          execute: params => Config.save(params.gpus, params.override === "true"),
           help: {
             description: "save current configuration",
             variables: [
@@ -36,6 +36,11 @@ const config = {
                 name: "gpus",
                 text: "list of GPUs ids to be saved",
                 default: "all"
+              },
+              {
+                name: "override",
+                text: "true: override current config, false: append to the existing configuration",
+                default: false
               }
             ]
           }
