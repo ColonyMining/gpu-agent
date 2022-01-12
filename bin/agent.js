@@ -1,21 +1,23 @@
 const { listGpus, readPowerTemperatureClock, readFanSpeed } = require("../lib/Gpu");
-const { analyzeTemperature } = require("../lib/TemperatureAnalyzer");
+const TemperatureAnalyzer = require("../lib/TemperatureAnalyzer");
 
-const DEFAULT_INTERVAL = 60_000;
-const interval = DEFAULT_INTERVAL;
-
+const DEFAULT_INTERVAL = 60;
 const DEFAULT_TEMPERATURE = 65;
-const temperature = DEFAULT_TEMPERATURE;
 
 const Agent = {
-  start: function () {
+  start: function (params) {
+    const interval = parseInt(params.interval) || DEFAULT_INTERVAL;
+    const temperature = (parseInt(params.temperature) || DEFAULT_TEMPERATURE) * 1_000;
+
     const gpus = listGpus();
+
+    const temperatureAnalyzer = new TemperatureAnalyzer();
 
     setInterval(() => {
       readPowerTemperatureClock(gpus);
       readFanSpeed(gpus);
 
-      analyzeTemperature(gpus, temperature);
+      temperatureAnalyzer.analyze(gpus, temperature);
     }, interval);
   }
 };

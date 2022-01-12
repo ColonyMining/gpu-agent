@@ -16,9 +16,21 @@ const config = {
         },
         {
           value: "start",
-          execute: params => Agent.start(params.gpus),
+          execute: params => Agent.start(params),
           help: {
-            description: "start GPU agent"
+            description: "start GPU agent",
+            variables: [
+              {
+                name: "interval",
+                text: "GPU check interval in seconds",
+                default: "60"
+              },
+              {
+                name: "temperature",
+                text: "GPU target temperature",
+                default: "65"
+              }
+            ]
           }
         }
       ]
