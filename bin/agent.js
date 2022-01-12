@@ -6,8 +6,8 @@ const DEFAULT_TEMPERATURE = 65;
 
 const Agent = {
   start: function (params) {
-    const interval = parseInt(params.interval) || DEFAULT_INTERVAL;
-    const temperature = (parseInt(params.temperature) || DEFAULT_TEMPERATURE) * 1_000;
+    const interval = (parseInt(params.interval) || DEFAULT_INTERVAL) * 1_000;
+    const temperature = parseInt(params.temperature) || DEFAULT_TEMPERATURE;
 
     const gpus = listGpus();
 
