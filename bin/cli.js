@@ -89,7 +89,7 @@ const config = {
         },
         {
           value: "save",
-          execute: params => Config.save(params.gpus, params.profile, params.ref, params.hashrate),
+          execute: params => Config.save(params.gpus, params.profile, params.ref, params.hr),
           help: {
             description: "save overclock profile configuration",
             variables: [
