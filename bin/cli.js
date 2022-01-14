@@ -8,12 +8,24 @@ const config = {
       name: "main",
       commands: [
         {
-          value: "config",
-          execute: ["profile:config"],
+          value: "monitor",
+          execute: ["profile:monitor"],
           help: {
-            description: "configure GPU agent"
+            description: "GPU monitor"
           }
         },
+        {
+          value: "overclock",
+          execute: ["profile:overclock"],
+          help: {
+            description: "GPU overclock"
+          }
+        }
+      ]
+    },
+    {
+      name: "monitor",
+      commands: [
         {
           value: "start",
           execute: params => Agent.start(params),
@@ -36,23 +48,91 @@ const config = {
       ]
     },
     {
-      name: "config",
+      name: "overclock",
       commands: [
         {
-          value: "save",
-          execute: params => Config.save(params.gpus, params.override === true || params.override === "true"),
+          value: "set",
           help: {
-            description: "save current configuration",
+            description: "set overclock to GPU",
+            variables: [
+              {
+                name: "gpu",
+                text: "GPU index/PCI slot (starting from 0)"
+              },
+              {
+                name: "power",
+                text: "GPU power limit (optional)",
+                default: ""
+              },
+              {
+                name: "core",
+                text: "GPU graphics clock offset (optional)",
+                default: ""
+              },
+              {
+                name: "memory",
+                text: "GPU memory transfer rate offset (optional)",
+                default: ""
+              },
+              {
+                name: "lock",
+                text: "GPU lock graphics clock (optional)",
+                default: ""
+              },
+              {
+                name: "fan",
+                text: "GPU fan speed [30-100] (optional)",
+                default: ""
+              }
+            ]
+          }
+        },
+        {
+          value: "save",
+          execute: params => Config.save(params.gpus, params.profile, params.ref, params.hashrate),
+          help: {
+            description: "save overclock profile configuration",
             variables: [
               {
                 name: "gpus",
-                text: "list of GPUs ids to be saved",
+                text: "list of GPUs ids to be saved (comma separated)",
                 default: "all"
               },
               {
-                name: "override",
-                text: "true: override current config, false: append to the existing configuration",
-                default: false
+                name: "profile",
+                text: "profile name"
+              },
+              {
+                name: "ref",
+                text: "reference (optional)",
+                default: ""
+              },
+              {
+                name: "hr",
+                text: "average hashrate (optional)",
+                default: ""
+              }
+            ]
+          }
+        },
+        {
+          value: "load",
+          help: {
+            description: "load overclock profile configuration",
+            variables: [
+              {
+                name: "gpus",
+                text: "list of GPUs ids to be saved (comma separated)",
+                default: "all"
+              },
+              {
+                name: "profile",
+                text: "profile name"
+              },
+              {
+                name: "ref",
+                text: "reference (optional)",
+                default: ""
               }
             ]
           }
