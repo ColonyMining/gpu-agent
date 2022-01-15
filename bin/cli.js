@@ -10,7 +10,7 @@ const config = {
       commands: [
         {
           value: "status",
-          execute: params => gpuStatus(params.gpus),
+          execute: params => Agent.status(params.gpus),
           help: {
             description: "display the status of GPUs",
             variables: [
