@@ -10,7 +10,7 @@ const config = {
       commands: [
         {
           value: "status",
-          execute: params => gpuStatus(params.gpus),
+          execute: params => console.log(JSON.stringify(gpuStatus(params.gpus))),
           help: {
             description: "display the status of GPUs",
             variables: [
