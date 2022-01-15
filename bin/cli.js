@@ -1,5 +1,5 @@
 const { Engine } = require("aux4");
-const Agent = require("./agent");
+const Agent = require("../lib/Agent");
 const { Config } = require("../lib/Config");
 const { gpuStatus } = require("../lib/Gpu");
 
