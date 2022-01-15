@@ -1,12 +1,27 @@
 const { Engine } = require("aux4");
 const Agent = require("./agent");
 const { Config } = require("../lib/Config");
+const { gpuStatus } = require("../lib/Gpu");
 
 const config = {
   profiles: [
     {
       name: "main",
       commands: [
+        {
+          value: "status",
+          execute: params => gpuStatus(params.gpus),
+          help: {
+            description: "display the status of GPUs",
+            variables: [
+              {
+                name: "gpus",
+                text: "list of GPUs ids to be saved (comma separated)",
+                default: "all"
+              }
+            ]
+          }
+        },
         {
           value: "monitor",
           execute: ["profile:monitor"],
