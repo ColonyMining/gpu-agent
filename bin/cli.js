@@ -117,6 +117,7 @@ const config = {
         },
         {
           value: "load",
+          execute: params => Config.apply(params.gpus, params.profile, params.ref, params.verbose, params.display),
           help: {
             description: "load overclock profile configuration",
             variables: [
@@ -133,6 +134,16 @@ const config = {
                 name: "ref",
                 text: "reference (optional)",
                 default: ""
+              },
+              {
+                name: "verbose",
+                text: "display messages",
+                default: "false"
+              },
+              {
+                name: "display",
+                text: "X display",
+                default: ":0"
               }
             ]
           }
