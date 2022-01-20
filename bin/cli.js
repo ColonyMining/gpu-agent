@@ -2,6 +2,13 @@ const { Engine } = require("aux4");
 const Agent = require("../lib/Agent");
 const { Config } = require("../lib/Config");
 const { gpuStatus } = require("../lib/Gpu");
+const { Table } = require("2table");
+const { displayTable } = require("../lib/DisplayTable");
+
+const GPU_STATUS_TABLE_STRUCTURE =
+  "index:GPU,pci:PCI,name:Name{color:cyan},power:Power[usage:Usage{color:red},limit:Limit]," +
+  "temperature:Temperature{color:green},fans:Fans[index:Fan,speed:Speed]," +
+  "overclock:Overclock[core:Core,memory:Memory,graphics:LGC,sm:LMC]";
 
 const config = {
   profiles: [
@@ -10,7 +17,7 @@ const config = {
       commands: [
         {
           value: "status",
-          execute: params => console.log(JSON.stringify(gpuStatus(params.gpus))),
+          execute: params => console.log(displayTable(gpuStatus(params.gpus), GPU_STATUS_TABLE_STRUCTURE)),
           help: {
             description: "display the status of GPUs",
             variables: [
@@ -65,6 +72,12 @@ const config = {
     {
       name: "overclock",
       commands: [
+        {
+          value: "current",
+          help: {
+            description: "display current overclock settings"
+          }
+        },
         {
           value: "set",
           help: {
