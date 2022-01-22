@@ -6,7 +6,7 @@ const { Table } = require("2table");
 const { displayTable } = require("../lib/DisplayTable");
 
 const GPU_STATUS_TABLE_STRUCTURE =
-  "index:GPU,pci:PCI,name:Name{color:cyan},power:Power[usage:Usage{color:red},limit:Limit]," +
+  "index:GPU,pci:PCI,name:Name{color:cyan;width:16},power:Power[usage:Usage{color:red},limit:Limit]," +
   "temperature:Temperature{color:green},fans:Fans[index:Fan,speed:Speed]," +
   "overclock:Overclock[core:Core,memory:Memory,graphics:LGC,sm:LMC]";
 
