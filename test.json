@@ -1,0 +1,176 @@
+[
+  {
+    "index": 0,
+    "name": "NVIDIA GeForce RTX 3070",
+    "fans": [
+      {
+        "index": 1,
+        "name": "Fan 1",
+        "speed": 76
+      },
+      {
+        "index": 0,
+        "name": "Fan 0",
+        "speed": 73
+      }
+    ],
+    "overclock": {
+      "graphics": 1815,
+      "sm": 1815,
+      "core": 100,
+      "memory": 2800
+    },
+    "pci": 1,
+    "power": {
+      "usage": 199,
+      "limit": 200
+    },
+    "temperature": 73,
+    "deltaTemperature": 0
+  },
+  {
+    "index": 1,
+    "name": "NVIDIA GeForce RTX 3070",
+    "fans": [
+      {
+        "index": 3,
+        "name": "Fan 3",
+        "speed": 88
+      },
+      {
+        "index": 2,
+        "name": "Fan 2",
+        "speed": 83
+      }
+    ],
+    "overclock": {
+      "graphics": 1785,
+      "sm": 1785,
+      "core": 100,
+      "memory": 2800
+    },
+    "pci": 2,
+    "power": {
+      "usage": 199,
+      "limit": 200
+    },
+    "temperature": 72,
+    "deltaTemperature": 0
+  },
+  {
+    "index": 2,
+    "name": "NVIDIA GeForce RTX 3070",
+    "fans": [
+      {
+        "index": 5,
+        "name": "Fan 5",
+        "speed": 57
+      },
+      {
+        "index": 4,
+        "name": "Fan 4",
+        "speed": 59
+      }
+    ],
+    "overclock": {
+      "graphics": 1800,
+      "sm": 1800,
+      "core": 100,
+      "memory": 2800
+    },
+    "pci": 3,
+    "power": {
+      "usage": 199,
+      "limit": 200
+    },
+    "temperature": 74,
+    "deltaTemperature": 0
+  },
+  {
+    "index": 3,
+    "name": "NVIDIA GeForce RTX 3070",
+    "fans": [
+      {
+        "index": 7,
+        "name": "Fan 7",
+        "speed": 79
+      },
+      {
+        "index": 6,
+        "name": "Fan 6",
+        "speed": 76
+      }
+    ],
+    "overclock": {
+      "graphics": 1755,
+      "sm": 1755,
+      "core": 0,
+      "memory": 0
+    },
+    "pci": 4,
+    "power": {
+      "usage": 199,
+      "limit": 200
+    },
+    "temperature": 74,
+    "deltaTemperature": 0
+  },
+  {
+    "index": 4,
+    "name": "NVIDIA GeForce RTX 3070",
+    "fans": [
+      {
+        "index": 9,
+        "name": "Fan 9",
+        "speed": 55
+      },
+      {
+        "index": 8,
+        "name": "Fan 8",
+        "speed": 53
+      }
+    ],
+    "overclock": {
+      "graphics": 1785,
+      "sm": 1785,
+      "core": 0,
+      "memory": 0
+    },
+    "pci": 5,
+    "power": {
+      "usage": 199,
+      "limit": 200
+    },
+    "temperature": 76,
+    "deltaTemperature": 0
+  },
+  {
+    "index": 5,
+    "name": "NVIDIA GeForce RTX 3070",
+    "fans": [
+      {
+        "index": 11,
+        "name": "Fan 11",
+        "speed": 30
+      },
+      {
+        "index": 10,
+        "name": "Fan 10",
+        "speed": 30
+      }
+    ],
+    "overclock": {
+      "graphics": 1815,
+      "sm": 1815,
+      "core": 100,
+      "memory": 2800
+    },
+    "pci": 6,
+    "power": {
+      "usage": 188,
+      "limit": 200
+    },
+    "temperature": 70,
+    "deltaTemperature": 0
+  }
+]
