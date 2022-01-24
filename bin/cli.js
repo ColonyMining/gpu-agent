@@ -17,7 +17,7 @@ const config = {
             variables: [
               {
                 name: "gpus",
-                text: "list of GPUs ids to be saved (comma separated)",
+                text: "list of GPUs ids (comma separated)",
                 default: "all"
               }
             ]
@@ -92,7 +92,7 @@ const config = {
             variables: [
               {
                 name: "gpus",
-                text: "list of GPUs ids to be saved (comma separated)",
+                text: "list of GPUs ids (comma separated)",
                 default: "all"
               },
               {
@@ -141,7 +141,7 @@ const config = {
             variables: [
               {
                 name: "gpus",
-                text: "list of GPUs ids to be saved (comma separated)",
+                text: "list of GPUs ids (comma separated)",
                 default: "all"
               },
               {
@@ -169,7 +169,7 @@ const config = {
             variables: [
               {
                 name: "gpus",
-                text: "list of GPUs ids to be saved (comma separated)",
+                text: "list of GPUs ids (comma separated)",
                 default: "all"
               },
               {
@@ -180,6 +180,25 @@ const config = {
                 name: "ref",
                 text: "reference (optional)",
                 default: ""
+              },
+              {
+                name: "display",
+                text: "X display",
+                default: ":0"
+              }
+            ]
+          }
+        },
+        {
+          value: "reset",
+          execute: params => Setting.resetOverclock(params.gpus, params.display),
+          help: {
+            description: "reset GPU overclock",
+            variables: [
+              {
+                name: "gpus",
+                text: "list of GPUs ids (comma separated)",
+                default: "all"
               },
               {
                 name: "display",
