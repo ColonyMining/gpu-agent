@@ -1,7 +1,8 @@
 const { Engine } = require("aux4");
 const Agent = require("../lib/Agent");
 const { Config } = require("../lib/Config");
-const { displayGpuStatus } = require("../lib/Command");
+const { displayGpuStatus } = require("../lib/StatusReport");
+const Setting = require("../lib/Setting");
 
 const config = {
   profiles: [
@@ -73,12 +74,26 @@ const config = {
         },
         {
           value: "set",
+          execute: params =>
+            Setting.setOverclock(
+              params.gpus,
+              {
+                power: params.power,
+                core: params.core,
+                memory: params.memory,
+                lgc: params.lgc,
+                lmc: params.lmc,
+                fan: params.fan
+              },
+              params.display
+            ),
           help: {
             description: "set overclock to GPU",
             variables: [
               {
-                name: "gpu",
-                text: "GPU index/PCI slot (starting from 0)"
+                name: "gpus",
+                text: "list of GPUs ids to be saved (comma separated)",
+                default: "all"
               },
               {
                 name: "power",
@@ -96,14 +111,24 @@ const config = {
                 default: ""
               },
               {
-                name: "lock",
+                name: "lgc",
                 text: "GPU lock graphics clock (optional)",
+                default: ""
+              },
+              {
+                name: "lmc",
+                text: "GPU lock memory clock (optional)",
                 default: ""
               },
               {
                 name: "fan",
                 text: "GPU fan speed [30-100] (optional)",
                 default: ""
+              },
+              {
+                name: "display",
+                text: "X display",
+                default: ":0"
               }
             ]
           }
