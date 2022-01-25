@@ -3,6 +3,7 @@ const Agent = require("../lib/Agent");
 const { Config } = require("../lib/Config");
 const { displayGpuStatus } = require("../lib/StatusReport");
 const Setting = require("../lib/Setting");
+const Profile = require("../lib/Profile");
 
 const config = {
   profiles: [
@@ -11,7 +12,7 @@ const config = {
       commands: [
         {
           value: "status",
-          execute: params => displayGpuStatus(params),
+          execute: params => displayGpuStatus(params.gpus, params.watch),
           help: {
             description: "display the status of GPUs",
             variables: [
@@ -19,6 +20,11 @@ const config = {
                 name: "gpus",
                 text: "list of GPUs ids (comma separated)",
                 default: "all"
+              },
+              {
+                name: "watch",
+                text: "watch mode",
+                default: "false"
               }
             ]
           }
@@ -35,6 +41,13 @@ const config = {
           execute: ["profile:overclock"],
           help: {
             description: "GPU overclock"
+          }
+        },
+        {
+          value: "profile",
+          execute: ["profile:profile"],
+          help: {
+            description: "GPU profiles"
           }
         }
       ]
@@ -85,6 +98,7 @@ const config = {
                 lmc: params.lmc,
                 fan: params.fan
               },
+              params.verbose,
               params.display
             ),
           help: {
@@ -126,6 +140,11 @@ const config = {
                 default: ""
               },
               {
+                name: "verbose",
+                text: "display additional details",
+                default: "false"
+              },
+              {
                 name: "display",
                 text: "X display",
                 default: ":0"
@@ -135,7 +154,8 @@ const config = {
         },
         {
           value: "save",
-          execute: params => Config.save(params.gpus, params.profile, params.ref, params.hr),
+          execute: params =>
+            Config.save(params.gpus, params.profile, params.ref, params.hr, params.verbose === "true", params.display),
           help: {
             description: "save overclock profile configuration",
             variables: [
@@ -157,13 +177,24 @@ const config = {
                 name: "hr",
                 text: "average hashrate (optional)",
                 default: ""
+              },
+              {
+                name: "verbose",
+                text: "display additional details",
+                default: "false"
+              },
+              {
+                name: "display",
+                text: "X display",
+                default: ":0"
               }
             ]
           }
         },
         {
           value: "load",
-          execute: params => Config.apply(params.gpus, params.profile, params.ref, params.display),
+          execute: params =>
+            Config.apply(params.gpus, params.profile, params.ref, params.verbose === "true", params.display),
           help: {
             description: "load overclock profile configuration",
             variables: [
@@ -182,6 +213,11 @@ const config = {
                 default: ""
               },
               {
+                name: "verbose",
+                text: "display additional details",
+                default: "false"
+              },
+              {
                 name: "display",
                 text: "X display",
                 default: ":0"
@@ -191,7 +227,7 @@ const config = {
         },
         {
           value: "reset",
-          execute: params => Setting.resetOverclock(params.gpus, params.display),
+          execute: params => Setting.resetOverclock(params.gpus, params.verbose === "true", params.display),
           help: {
             description: "reset GPU overclock",
             variables: [
@@ -199,6 +235,11 @@ const config = {
                 name: "gpus",
                 text: "list of GPUs ids (comma separated)",
                 default: "all"
+              },
+              {
+                name: "verbose",
+                text: "display additional details",
+                default: "false"
               },
               {
                 name: "display",
@@ -209,9 +250,23 @@ const config = {
           }
         }
       ]
+    },
+    {
+      name: "profile",
+      commands: [
+        {
+          value: "list",
+          execute: () => Profile.list(),
+          help: {
+            description: "list profiles"
+          }
+        }
+      ]
     }
   ]
 };
+
+process.title = "gpu-agent";
 
 const engine = Engine({ aux4: config });
 
