@@ -167,8 +167,7 @@ const config = {
         },
         {
           value: "save",
-          execute: params =>
-            Config.save(params.gpus, params.profile, params.ref, params.hr, params.verbose === "true", params.display),
+          execute: params => Config.save(params.gpus, params.profile, params.ref, params.hr, params.display),
           help: {
             description: "save overclock profile configuration",
             variables: [
@@ -190,11 +189,6 @@ const config = {
                 name: "hr",
                 text: "average hashrate (optional)",
                 default: ""
-              },
-              {
-                name: "verbose",
-                text: "display additional details",
-                default: "false"
               },
               {
                 name: "display",
