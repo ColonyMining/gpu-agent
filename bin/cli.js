@@ -104,12 +104,12 @@ const config = {
             Setting.setOverclock(
               params.gpus,
               {
-                power: params.power,
-                core: params.core,
-                memory: params.memory,
-                lgc: params.lgc,
-                lmc: params.lmc,
-                fan: params.fan
+                power: toInt(params.power),
+                core: toInt(params.core),
+                memory: toInt(params.memory),
+                lgc: toInt(params.lgc),
+                lmc: toInt(params.lmc),
+                fan: toInt(params.fan)
               },
               params.verbose,
               params.display
@@ -272,6 +272,13 @@ const config = {
     }
   ]
 };
+
+function toInt(value) {
+  if (value === undefined) {
+    return undefined;
+  }
+  return parseInt(value);
+}
 
 process.title = "gpu-agent";
 
