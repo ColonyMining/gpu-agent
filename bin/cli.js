@@ -81,8 +81,21 @@ const config = {
       commands: [
         {
           value: "current",
+          execute: params => Setting.getOverclockSettings(params.gpus, params.display),
           help: {
-            description: "display current overclock settings"
+            description: "display current overclock settings",
+            variables: [
+              {
+                name: "gpus",
+                text: "list of GPUs ids (comma separated)",
+                default: "all"
+              },
+              {
+                name: "display",
+                text: "X display",
+                default: ":0"
+              }
+            ]
           }
         },
         {
