@@ -115,6 +115,7 @@ const config = {
               params.gpus,
               {
                 tag: params.tag,
+                removeTag: params["remove-tag"] === "true",
                 power: toInt(params.power),
                 temperature: toInt(params.temperature),
                 core: toInt(params.core),
@@ -172,6 +173,11 @@ const config = {
                 name: "fan",
                 text: "GPU fan speed [30-100] (optional)",
                 default: ""
+              },
+              {
+                name: "remove-tag",
+                text: "remove GPU tag (optional)",
+                default: "false"
               },
               {
                 name: "verbose",
