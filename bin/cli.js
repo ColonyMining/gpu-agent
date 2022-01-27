@@ -216,8 +216,7 @@ const config = {
         },
         {
           value: "load",
-          execute: params =>
-            new Config(params.display).apply(params.gpus, params.profile, params.tag, params.verbose === "true"),
+          execute: params => new Config(params.display).apply(params.gpus, params.profile, params.verbose === "true"),
           help: {
             description: "load overclock profile configuration",
             variables: [
@@ -229,11 +228,6 @@ const config = {
               {
                 name: "profile",
                 text: "profile name"
-              },
-              {
-                name: "tag",
-                text: "tag (optional)",
-                default: ""
               },
               {
                 name: "verbose",
