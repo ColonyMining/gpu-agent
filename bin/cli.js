@@ -182,7 +182,7 @@ const config = {
         },
         {
           value: "save",
-          execute: params => new Config(params.display).save(params.gpus, params.profile, params.tag, params.hr),
+          execute: params => new Config(params.display).save(params.gpus, params.profile, params.hr),
           help: {
             description: "save overclock profile configuration",
             variables: [
@@ -194,11 +194,6 @@ const config = {
               {
                 name: "profile",
                 text: "profile name"
-              },
-              {
-                name: "tag",
-                text: "tag (optional)",
-                default: ""
               },
               {
                 name: "hr",
