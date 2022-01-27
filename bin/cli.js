@@ -116,6 +116,7 @@ const config = {
               {
                 tag: params.tag,
                 power: toInt(params.power),
+                temperature: toInt(params.temperature),
                 core: toInt(params.core),
                 memory: toInt(params.memory),
                 lgc: toInt(params.lgc),
@@ -160,6 +161,11 @@ const config = {
               {
                 name: "lmc",
                 text: "GPU lock memory clock (optional)",
+                default: ""
+              },
+              {
+                name: "temperature",
+                text: "GPU target temperature (optional)",
                 default: ""
               },
               {
