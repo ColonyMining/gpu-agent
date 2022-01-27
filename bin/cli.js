@@ -81,7 +81,7 @@ const config = {
       commands: [
         {
           value: "current",
-          execute: params => Setting.getOverclockSettings(params.gpus, params.display),
+          execute: params => new Setting(params.display).getOverclockSettings(params.gpus),
           help: {
             description: "display current overclock settings",
             variables: [
@@ -101,7 +101,7 @@ const config = {
         {
           value: "set",
           execute: params =>
-            Setting.setOverclock(
+            new Setting(params.display).setOverclock(
               params.gpus,
               {
                 power: toInt(params.power),
@@ -111,8 +111,7 @@ const config = {
                 lmc: toInt(params.lmc),
                 fan: toInt(params.fan)
               },
-              params.verbose,
-              params.display
+              params.verbose
             ),
           help: {
             description: "set overclock to GPU",
@@ -234,7 +233,7 @@ const config = {
         },
         {
           value: "reset",
-          execute: params => Setting.resetOverclock(params.gpus, params.verbose === "true", params.display),
+          execute: params => new Setting(params.display).resetOverclock(params.gpus, params.verbose === "true"),
           help: {
             description: "reset GPU overclock",
             variables: [
