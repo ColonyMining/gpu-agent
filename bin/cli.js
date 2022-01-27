@@ -1,6 +1,6 @@
 const { Engine } = require("aux4");
 const Agent = require("../lib/Agent");
-const { Config } = require("../lib/Config");
+const Config = require("../lib/Config");
 const { displayGpuStatus } = require("../lib/StatusReport");
 const Setting = require("../lib/Setting");
 const Profile = require("../lib/Profile");
@@ -12,7 +12,7 @@ const config = {
       commands: [
         {
           value: "status",
-          execute: params => displayGpuStatus(params.gpus, params.watch),
+          execute: params => displayGpuStatus(params.gpus, params.watch, params.display),
           help: {
             description: "display the status of GPUs",
             variables: [
@@ -25,6 +25,11 @@ const config = {
                 name: "watch",
                 text: "watch mode",
                 default: "false"
+              },
+              {
+                name: "display",
+                text: "X display",
+                default: ":0"
               }
             ]
           }
@@ -70,6 +75,11 @@ const config = {
                 name: "temperature",
                 text: "GPU target temperature",
                 default: "65"
+              },
+              {
+                name: "display",
+                text: "X display",
+                default: ":0"
               }
             ]
           }
@@ -104,6 +114,7 @@ const config = {
             new Setting(params.display).setOverclock(
               params.gpus,
               {
+                tag: params.tag,
                 power: toInt(params.power),
                 core: toInt(params.core),
                 memory: toInt(params.memory),
@@ -120,6 +131,11 @@ const config = {
                 name: "gpus",
                 text: "list of GPUs ids (comma separated)",
                 default: "all"
+              },
+              {
+                name: "tag",
+                text: "tag (optional)",
+                default: ""
               },
               {
                 name: "power",
@@ -166,7 +182,7 @@ const config = {
         },
         {
           value: "save",
-          execute: params => Config.save(params.gpus, params.profile, params.ref, params.hr, params.display),
+          execute: params => new Config(params.display).save(params.gpus, params.profile, params.tag, params.hr),
           help: {
             description: "save overclock profile configuration",
             variables: [
@@ -180,8 +196,8 @@ const config = {
                 text: "profile name"
               },
               {
-                name: "ref",
-                text: "reference (optional)",
+                name: "tag",
+                text: "tag (optional)",
                 default: ""
               },
               {
@@ -200,7 +216,7 @@ const config = {
         {
           value: "load",
           execute: params =>
-            Config.apply(params.gpus, params.profile, params.ref, params.verbose === "true", params.display),
+            new Config(params.display).apply(params.gpus, params.profile, params.tag, params.verbose === "true"),
           help: {
             description: "load overclock profile configuration",
             variables: [
@@ -214,8 +230,8 @@ const config = {
                 text: "profile name"
               },
               {
-                name: "ref",
-                text: "reference (optional)",
+                name: "tag",
+                text: "tag (optional)",
                 default: ""
               },
               {
@@ -262,9 +278,16 @@ const config = {
       commands: [
         {
           value: "list",
-          execute: () => Profile.list(),
+          execute: params => Profile.list(params.display),
           help: {
-            description: "list profiles"
+            description: "list profiles",
+            variables: [
+              {
+                name: "display",
+                text: "X display",
+                default: ":0"
+              }
+            ]
           }
         }
       ]
