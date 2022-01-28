@@ -62,7 +62,7 @@ const config = {
       commands: [
         {
           value: "start",
-          execute: params => Agent.start(params),
+          execute: params => Agent.start(params.interval, params.temperature, params.display),
           help: {
             description: "start GPU agent",
             variables: [
