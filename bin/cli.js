@@ -279,7 +279,7 @@ const config = {
       commands: [
         {
           value: "list",
-          execute: params => new Profile(params.display).list(params.profile, params.gpu),
+          execute: params => new Profile(params.display).list(params.profile, params.gpu, params.tag),
           help: {
             description: "list profiles",
             variables: [
@@ -291,6 +291,11 @@ const config = {
               {
                 name: "gpu",
                 text: "filter gpu (optional)",
+                default: ""
+              },
+              {
+                name: "tag",
+                text: "filter tag (optional)",
                 default: ""
               },
               {
