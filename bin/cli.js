@@ -305,6 +305,35 @@ const config = {
               }
             ]
           }
+        },
+        {
+          value: "remove",
+          execute: params => new Profile(params.display).remove(params.profile, params.gpu, params.tag),
+          help: {
+            description: "remove profiles",
+            variables: [
+              {
+                name: "profile",
+                text: "filter profile name (optional)",
+                default: ""
+              },
+              {
+                name: "gpu",
+                text: "filter gpu (optional)",
+                default: ""
+              },
+              {
+                name: "tag",
+                text: "filter tag (optional)",
+                default: ""
+              },
+              {
+                name: "display",
+                text: "X display",
+                default: ":0"
+              }
+            ]
+          }
         }
       ]
     }
