@@ -6,7 +6,9 @@ const { v4: uuid } = require("uuid");
 const tmpFile = `/tmp/${uuid()}.out`;
 const stream = createWriteStream(tmpFile);
 
-childProcess.execSync("nvidia-settings -c :0 -q gpus", { stdio: [stream, stream, stream] });
+stream.on("open", () => {
+  childProcess.execSync("nvidia-settings -c :0 -q gpus", { stdio: [stream, stream, stream] });
+});
 
 response = fs.readFileSync(tmpFile).toString("utf-8");
 
