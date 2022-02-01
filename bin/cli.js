@@ -12,7 +12,7 @@ const config = {
       commands: [
         {
           value: "status",
-          execute: params => displayGpuStatus(params.gpus, params.watch, params.display),
+          execute: params => executeCommand(displayGpuStatus(params.gpus, params.watch, params.display)),
           help: {
             description: "display the status of GPUs",
             variables: [
@@ -62,7 +62,7 @@ const config = {
       commands: [
         {
           value: "start",
-          execute: params => Agent.start(params.interval, params.temperature, params.display),
+          execute: params => executeCommand(Agent.start(params.interval, params.temperature, params.display)),
           help: {
             description: "start GPU agent",
             variables: [
@@ -91,7 +91,7 @@ const config = {
       commands: [
         {
           value: "current",
-          execute: params => new Setting(params.display).getOverclockSettings(params.gpus),
+          execute: params => executeCommand(new Setting(params.display).getOverclockSettings(params.gpus)),
           help: {
             description: "display current overclock settings",
             variables: [
@@ -111,20 +111,22 @@ const config = {
         {
           value: "set",
           execute: params =>
-            new Setting(params.display).setOverclock(
-              params.gpus,
-              {
-                tag: params.tag,
-                removeTag: params["remove-tag"] === "true",
-                power: toInt(params.power),
-                temperature: toInt(params.temperature),
-                core: toInt(params.core),
-                memory: toInt(params.memory),
-                lgc: toInt(params.lgc),
-                lmc: toInt(params.lmc),
-                fan: toInt(params.fan)
-              },
-              params.verbose
+            executeCommand(
+              new Setting(params.display).setOverclock(
+                params.gpus,
+                {
+                  tag: params.tag,
+                  removeTag: params["remove-tag"] === "true",
+                  power: toInt(params.power),
+                  temperature: toInt(params.temperature),
+                  core: toInt(params.core),
+                  memory: toInt(params.memory),
+                  lgc: toInt(params.lgc),
+                  lmc: toInt(params.lmc),
+                  fan: toInt(params.fan)
+                },
+                params.verbose
+              )
             ),
           help: {
             description: "set overclock to GPU",
@@ -222,7 +224,8 @@ const config = {
         },
         {
           value: "load",
-          execute: params => new Config(params.display).apply(params.gpus, params.profile, params.verbose === "true"),
+          execute: params =>
+            executeCommand(new Config(params.display).apply(params.gpus, params.profile, params.verbose === "true")),
           help: {
             description: "load overclock profile configuration",
             variables: [
@@ -250,7 +253,8 @@ const config = {
         },
         {
           value: "reset",
-          execute: params => new Setting(params.display).resetOverclock(params.gpus, params.verbose === "true"),
+          execute: params =>
+            executeCommand(new Setting(params.display).resetOverclock(params.gpus, params.verbose === "true")),
           help: {
             description: "reset GPU overclock",
             variables: [
@@ -339,6 +343,15 @@ const config = {
     }
   ]
 };
+
+function executeCommand(command) {
+  command
+    .then(() => {})
+    .catch(err => {
+      console.error(`ERROR: ${err}`.red);
+      process.exit(1);
+    });
+}
 
 function toInt(value) {
   if (value === undefined) {
