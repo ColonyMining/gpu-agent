@@ -1,39 +1,297 @@
 const { Engine } = require("aux4");
-const Agent = require("../lib/Agent");
+const Client = require("../lib/client/Client");
 const Config = require("../lib/Config");
-const { displayGpuStatus } = require("../lib/StatusReport");
-const Setting = require("../lib/Setting");
 const Profile = require("../lib/Profile");
+
+const gpuStatusReport = {
+  value: "status",
+  execute: Client.status,
+  help: {
+    description: "display the status of GPUs",
+    variables: [
+      {
+        name: "gpus",
+        text: "list of GPUs ids (comma separated)",
+        default: "all"
+      },
+      {
+        name: "watch",
+        text: "watch mode",
+        default: "false"
+      },
+      {
+        name: "display",
+        text: "X display",
+        default: ":0"
+      }
+    ]
+  }
+};
+
+const monitorStart = {
+  value: "start",
+  execute: Client.startAgent,
+  help: {
+    description: "start GPU agent",
+    variables: [
+      {
+        name: "interval",
+        text: "GPU check interval in seconds",
+        default: "60"
+      },
+      {
+        name: "temperature",
+        text: "GPU target temperature",
+        default: "65"
+      },
+      {
+        name: "display",
+        text: "X display",
+        default: ":0"
+      }
+    ]
+  }
+};
+
+const currentOverclock = {
+  value: "current",
+  execute: Client.currentOverclock,
+  help: {
+    description: "display current overclock settings",
+    variables: [
+      {
+        name: "gpus",
+        text: "list of GPUs ids (comma separated)",
+        default: "all"
+      },
+      {
+        name: "display",
+        text: "X display",
+        default: ":0"
+      }
+    ]
+  }
+};
+
+const setOverclock = {
+  value: "set",
+  execute: Client.setOverclock,
+  help: {
+    description: "set overclock to GPU",
+    variables: [
+      {
+        name: "gpus",
+        text: "list of GPUs ids (comma separated)",
+        default: "all"
+      },
+      {
+        name: "tag",
+        text: "tag (optional)",
+        default: ""
+      },
+      {
+        name: "power",
+        text: "GPU power limit (optional)",
+        default: ""
+      },
+      {
+        name: "core",
+        text: "GPU graphics clock offset (optional)",
+        default: ""
+      },
+      {
+        name: "memory",
+        text: "GPU memory transfer rate offset (optional)",
+        default: ""
+      },
+      {
+        name: "lgc",
+        text: "GPU lock graphics clock (optional)",
+        default: ""
+      },
+      {
+        name: "lmc",
+        text: "GPU lock memory clock (optional)",
+        default: ""
+      },
+      {
+        name: "temperature",
+        text: "GPU target temperature (optional)",
+        default: ""
+      },
+      {
+        name: "fan",
+        text: "GPU fan speed [30-100] (optional)",
+        default: ""
+      },
+      {
+        name: "remove-tag",
+        text: "remove GPU tag (optional)",
+        default: "false"
+      },
+      {
+        name: "verbose",
+        text: "display additional details",
+        default: "false"
+      },
+      {
+        name: "display",
+        text: "X display",
+        default: ":0"
+      }
+    ]
+  }
+};
+
+const saveOverclock = {
+  value: "save",
+  execute: Client.saveOverclock,
+  help: {
+    description: "save overclock profile configuration",
+    variables: [
+      {
+        name: "gpus",
+        text: "list of GPUs ids (comma separated)",
+        default: "all"
+      },
+      {
+        name: "profile",
+        text: "profile name"
+      },
+      {
+        name: "hr",
+        text: "average hashrate (optional)",
+        default: ""
+      },
+      {
+        name: "display",
+        text: "X display",
+        default: ":0"
+      }
+    ]
+  }
+};
+
+const loadOverclock = {
+  value: "load",
+  execute: Client.loadOverclock,
+  help: {
+    description: "load overclock profile configuration",
+    variables: [
+      {
+        name: "gpus",
+        text: "list of GPUs ids (comma separated)",
+        default: "all"
+      },
+      {
+        name: "profile",
+        text: "profile name"
+      },
+      {
+        name: "verbose",
+        text: "display additional details",
+        default: "false"
+      },
+      {
+        name: "display",
+        text: "X display",
+        default: ":0"
+      }
+    ]
+  }
+};
+
+const resetOverclock = {
+  value: "reset",
+  execute: Client.resetOverclock,
+  help: {
+    description: "reset GPU overclock",
+    variables: [
+      {
+        name: "gpus",
+        text: "list of GPUs ids (comma separated)",
+        default: "all"
+      },
+      {
+        name: "verbose",
+        text: "display additional details",
+        default: "false"
+      },
+      {
+        name: "display",
+        text: "X display",
+        default: ":0"
+      }
+    ]
+  }
+};
+
+const listProfile = {
+  value: "list",
+  execute: Client.listProfile,
+  help: {
+    description: "list profiles",
+    variables: [
+      {
+        name: "profile",
+        text: "filter profile name (optional)",
+        default: ""
+      },
+      {
+        name: "gpu",
+        text: "filter gpu (optional)",
+        default: ""
+      },
+      {
+        name: "tag",
+        text: "filter tag (optional)",
+        default: ""
+      },
+      {
+        name: "display",
+        text: "X display",
+        default: ":0"
+      }
+    ]
+  }
+};
+
+const removeProfile = {
+  value: "remove",
+  execute: Client.removeProfile,
+  help: {
+    description: "remove profiles",
+    variables: [
+      {
+        name: "profile",
+        text: "filter profile name (optional)",
+        default: ""
+      },
+      {
+        name: "gpu",
+        text: "filter gpu (optional)",
+        default: ""
+      },
+      {
+        name: "tag",
+        text: "filter tag (optional)",
+        default: ""
+      },
+      {
+        name: "display",
+        text: "X display",
+        default: ":0"
+      }
+    ]
+  }
+};
 
 const config = {
   profiles: [
     {
       name: "main",
       commands: [
-        {
-          value: "status",
-          execute: params => executeCommand(displayGpuStatus(params.gpus, params.watch, params.display)),
-          help: {
-            description: "display the status of GPUs",
-            variables: [
-              {
-                name: "gpus",
-                text: "list of GPUs ids (comma separated)",
-                default: "all"
-              },
-              {
-                name: "watch",
-                text: "watch mode",
-                default: "false"
-              },
-              {
-                name: "display",
-                text: "X display",
-                default: ":0"
-              }
-            ]
-          }
-        },
+        gpuStatusReport,
         {
           value: "monitor",
           execute: ["profile:monitor"],
@@ -59,306 +317,18 @@ const config = {
     },
     {
       name: "monitor",
-      commands: [
-        {
-          value: "start",
-          execute: params => executeCommand(Agent.start(params.interval, params.temperature, params.display)),
-          help: {
-            description: "start GPU agent",
-            variables: [
-              {
-                name: "interval",
-                text: "GPU check interval in seconds",
-                default: "60"
-              },
-              {
-                name: "temperature",
-                text: "GPU target temperature",
-                default: "65"
-              },
-              {
-                name: "display",
-                text: "X display",
-                default: ":0"
-              }
-            ]
-          }
-        }
-      ]
+      commands: [monitorStart]
     },
     {
       name: "overclock",
-      commands: [
-        {
-          value: "current",
-          execute: params => executeCommand(new Setting(params.display).getOverclockSettings(params.gpus)),
-          help: {
-            description: "display current overclock settings",
-            variables: [
-              {
-                name: "gpus",
-                text: "list of GPUs ids (comma separated)",
-                default: "all"
-              },
-              {
-                name: "display",
-                text: "X display",
-                default: ":0"
-              }
-            ]
-          }
-        },
-        {
-          value: "set",
-          execute: params =>
-            executeCommand(
-              new Setting(params.display).setOverclock(
-                params.gpus,
-                {
-                  tag: params.tag,
-                  removeTag: params["remove-tag"] === "true",
-                  power: toInt(params.power),
-                  temperature: toInt(params.temperature),
-                  core: toInt(params.core),
-                  memory: toInt(params.memory),
-                  lgc: toInt(params.lgc),
-                  lmc: toInt(params.lmc),
-                  fan: toInt(params.fan)
-                },
-                params.verbose
-              )
-            ),
-          help: {
-            description: "set overclock to GPU",
-            variables: [
-              {
-                name: "gpus",
-                text: "list of GPUs ids (comma separated)",
-                default: "all"
-              },
-              {
-                name: "tag",
-                text: "tag (optional)",
-                default: ""
-              },
-              {
-                name: "power",
-                text: "GPU power limit (optional)",
-                default: ""
-              },
-              {
-                name: "core",
-                text: "GPU graphics clock offset (optional)",
-                default: ""
-              },
-              {
-                name: "memory",
-                text: "GPU memory transfer rate offset (optional)",
-                default: ""
-              },
-              {
-                name: "lgc",
-                text: "GPU lock graphics clock (optional)",
-                default: ""
-              },
-              {
-                name: "lmc",
-                text: "GPU lock memory clock (optional)",
-                default: ""
-              },
-              {
-                name: "temperature",
-                text: "GPU target temperature (optional)",
-                default: ""
-              },
-              {
-                name: "fan",
-                text: "GPU fan speed [30-100] (optional)",
-                default: ""
-              },
-              {
-                name: "remove-tag",
-                text: "remove GPU tag (optional)",
-                default: "false"
-              },
-              {
-                name: "verbose",
-                text: "display additional details",
-                default: "false"
-              },
-              {
-                name: "display",
-                text: "X display",
-                default: ":0"
-              }
-            ]
-          }
-        },
-        {
-          value: "save",
-          execute: params => executeCommand(new Config(params.display).save(params.gpus, params.profile, params.hr)),
-          help: {
-            description: "save overclock profile configuration",
-            variables: [
-              {
-                name: "gpus",
-                text: "list of GPUs ids (comma separated)",
-                default: "all"
-              },
-              {
-                name: "profile",
-                text: "profile name"
-              },
-              {
-                name: "hr",
-                text: "average hashrate (optional)",
-                default: ""
-              },
-              {
-                name: "display",
-                text: "X display",
-                default: ":0"
-              }
-            ]
-          }
-        },
-        {
-          value: "load",
-          execute: params =>
-            executeCommand(new Config(params.display).apply(params.gpus, params.profile, params.verbose === "true")),
-          help: {
-            description: "load overclock profile configuration",
-            variables: [
-              {
-                name: "gpus",
-                text: "list of GPUs ids (comma separated)",
-                default: "all"
-              },
-              {
-                name: "profile",
-                text: "profile name"
-              },
-              {
-                name: "verbose",
-                text: "display additional details",
-                default: "false"
-              },
-              {
-                name: "display",
-                text: "X display",
-                default: ":0"
-              }
-            ]
-          }
-        },
-        {
-          value: "reset",
-          execute: params =>
-            executeCommand(new Setting(params.display).resetOverclock(params.gpus, params.verbose === "true")),
-          help: {
-            description: "reset GPU overclock",
-            variables: [
-              {
-                name: "gpus",
-                text: "list of GPUs ids (comma separated)",
-                default: "all"
-              },
-              {
-                name: "verbose",
-                text: "display additional details",
-                default: "false"
-              },
-              {
-                name: "display",
-                text: "X display",
-                default: ":0"
-              }
-            ]
-          }
-        }
-      ]
+      commands: [currentOverclock, setOverclock, saveOverclock, loadOverclock, resetOverclock]
     },
     {
       name: "profile",
-      commands: [
-        {
-          value: "list",
-          execute: params => new Profile(params.display).list(params.profile, params.gpu, params.tag),
-          help: {
-            description: "list profiles",
-            variables: [
-              {
-                name: "profile",
-                text: "filter profile name (optional)",
-                default: ""
-              },
-              {
-                name: "gpu",
-                text: "filter gpu (optional)",
-                default: ""
-              },
-              {
-                name: "tag",
-                text: "filter tag (optional)",
-                default: ""
-              },
-              {
-                name: "display",
-                text: "X display",
-                default: ":0"
-              }
-            ]
-          }
-        },
-        {
-          value: "remove",
-          execute: params => new Profile(params.display).remove(params.profile, params.gpu, params.tag),
-          help: {
-            description: "remove profiles",
-            variables: [
-              {
-                name: "profile",
-                text: "filter profile name (optional)",
-                default: ""
-              },
-              {
-                name: "gpu",
-                text: "filter gpu (optional)",
-                default: ""
-              },
-              {
-                name: "tag",
-                text: "filter tag (optional)",
-                default: ""
-              },
-              {
-                name: "display",
-                text: "X display",
-                default: ":0"
-              }
-            ]
-          }
-        }
-      ]
+      commands: [listProfile, removeProfile]
     }
   ]
 };
-
-function executeCommand(command) {
-  command
-    .then(() => {})
-    .catch(err => {
-      console.error(`ERROR: ${err}`.red);
-      process.exit(1);
-    });
-}
-
-function toInt(value) {
-  if (value === undefined) {
-    return undefined;
-  }
-  return parseInt(value);
-}
 
 process.title = "gpu-agent";
 
