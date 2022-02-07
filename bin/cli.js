@@ -1,288 +1,189 @@
 const { Engine } = require("aux4");
 const Client = require("../lib/client/Client");
-const Config = require("../lib/Config");
-const Profile = require("../lib/Profile");
 
-const gpuStatusReport = {
+const VARIABLES = {
+  GPUS: {
+    name: "gpus",
+    text: "list of GPUs ids (comma separated)",
+    default: "all"
+  },
+  TAG: {
+    name: "tag",
+    text: "tag (optional)",
+    default: ""
+  },
+  REMOVE_TAG: {
+    name: "remove-tag",
+    text: "remove GPU tag (optional)",
+    default: "false"
+  },
+  POWER: {
+    name: "power",
+    text: "GPU power limit (optional)",
+    default: ""
+  },
+  CORE: {
+    name: "core",
+    text: "GPU graphics clock offset (optional)",
+    default: ""
+  },
+  MEMORY: {
+    name: "memory",
+    text: "GPU memory transfer rate offset (optional)",
+    default: ""
+  },
+  LGC: {
+    name: "lgc",
+    text: "GPU lock graphics clock (optional)",
+    default: ""
+  },
+  LMC: {
+    name: "lmc",
+    text: "GPU lock memory clock (optional)",
+    default: ""
+  },
+  FAN: {
+    name: "fan",
+    text: "GPU fan speed [30-100] (optional)",
+    default: ""
+  },
+  FILTER_BY_PROFILE: {
+    name: "profile",
+    text: "filter profile name (optional)",
+    default: ""
+  },
+  FILTER_BY_GPU: {
+    name: "gpu",
+    text: "filter gpu (optional)",
+    default: ""
+  },
+  FILTER_BY_TAG: {
+    name: "tag",
+    text: "filter tag (optional)",
+    default: ""
+  },
+  HASHRATE: {
+    name: "hr",
+    text: "average hashrate (optional)",
+    default: ""
+  },
+  VERBOSE: {
+    name: "verbose",
+    text: "display additional details",
+    default: "false"
+  },
+  DISPLAY: {
+    name: "display",
+    text: "X display",
+    default: ":0"
+  },
+  INTERVAL: {
+    name: "interval",
+    text: "GPU check interval in seconds",
+    default: "60"
+  },
+  TEMPERATURE: {
+    name: "temperature",
+    text: "GPU target temperature"
+  },
+  WATCH: {
+    name: "watch",
+    text: "watch mode",
+    default: "false"
+  }
+};
+
+const GPU_STATUS_REPORT = {
   value: "status",
   execute: Client.status,
   help: {
     description: "display the status of GPUs",
-    variables: [
-      {
-        name: "gpus",
-        text: "list of GPUs ids (comma separated)",
-        default: "all"
-      },
-      {
-        name: "watch",
-        text: "watch mode",
-        default: "false"
-      },
-      {
-        name: "display",
-        text: "X display",
-        default: ":0"
-      }
-    ]
+    variables: [VARIABLES.GPUS, VARIABLES.WATCH, VARIABLES.DISPLAY]
   }
 };
 
-const monitorStart = {
+const MONITOR_START = {
   value: "start",
   execute: Client.startAgent,
   help: {
     description: "start GPU agent",
-    variables: [
-      {
-        name: "interval",
-        text: "GPU check interval in seconds",
-        default: "60"
-      },
-      {
-        name: "temperature",
-        text: "GPU target temperature",
-        default: "65"
-      },
-      {
-        name: "display",
-        text: "X display",
-        default: ":0"
-      }
-    ]
+    variables: [VARIABLES.INTERVAL, VARIABLES.TEMPERATURE, VARIABLES.DISPLAY]
   }
 };
 
-const currentOverclock = {
+const CURRENT_OVERCLOCK = {
   value: "current",
   execute: Client.currentOverclock,
   help: {
     description: "display current overclock settings",
-    variables: [
-      {
-        name: "gpus",
-        text: "list of GPUs ids (comma separated)",
-        default: "all"
-      },
-      {
-        name: "display",
-        text: "X display",
-        default: ":0"
-      }
-    ]
+    variables: [VARIABLES.GPUS, VARIABLES.DISPLAY]
   }
 };
 
-const setOverclock = {
+const SET_OVERCLOCK = {
   value: "set",
   execute: Client.setOverclock,
   help: {
     description: "set overclock to GPU",
     variables: [
-      {
-        name: "gpus",
-        text: "list of GPUs ids (comma separated)",
-        default: "all"
-      },
-      {
-        name: "tag",
-        text: "tag (optional)",
-        default: ""
-      },
-      {
-        name: "power",
-        text: "GPU power limit (optional)",
-        default: ""
-      },
-      {
-        name: "core",
-        text: "GPU graphics clock offset (optional)",
-        default: ""
-      },
-      {
-        name: "memory",
-        text: "GPU memory transfer rate offset (optional)",
-        default: ""
-      },
-      {
-        name: "lgc",
-        text: "GPU lock graphics clock (optional)",
-        default: ""
-      },
-      {
-        name: "lmc",
-        text: "GPU lock memory clock (optional)",
-        default: ""
-      },
-      {
-        name: "temperature",
-        text: "GPU target temperature (optional)",
-        default: ""
-      },
-      {
-        name: "fan",
-        text: "GPU fan speed [30-100] (optional)",
-        default: ""
-      },
-      {
-        name: "remove-tag",
-        text: "remove GPU tag (optional)",
-        default: "false"
-      },
-      {
-        name: "verbose",
-        text: "display additional details",
-        default: "false"
-      },
-      {
-        name: "display",
-        text: "X display",
-        default: ":0"
-      }
+      VARIABLES.GPUS,
+      VARIABLES.TAG,
+      VARIABLES.POWER,
+      VARIABLES.CORE,
+      VARIABLES.MEMORY,
+      VARIABLES.LGC,
+      VARIABLES.LMC,
+      VARIABLES.TEMPERATURE,
+      VARIABLES.FAN,
+      VARIABLES.REMOVE_TAG,
+      VARIABLES.VERBOSE,
+      VARIABLES.DISPLAY
     ]
   }
 };
 
-const saveOverclock = {
+const SAVE_OVERCLOCK = {
   value: "save",
   execute: Client.saveOverclock,
   help: {
     description: "save overclock profile configuration",
-    variables: [
-      {
-        name: "gpus",
-        text: "list of GPUs ids (comma separated)",
-        default: "all"
-      },
-      {
-        name: "profile",
-        text: "profile name"
-      },
-      {
-        name: "hr",
-        text: "average hashrate (optional)",
-        default: ""
-      },
-      {
-        name: "display",
-        text: "X display",
-        default: ":0"
-      }
-    ]
+    variables: [VARIABLES.GPUS, VARIABLES.FILTER_BY_PROFILE, VARIABLES.HASHRATE, VARIABLES.DISPLAY]
   }
 };
 
-const loadOverclock = {
+const LOAD_OVERCLOCK = {
   value: "load",
   execute: Client.loadOverclock,
   help: {
     description: "load overclock profile configuration",
-    variables: [
-      {
-        name: "gpus",
-        text: "list of GPUs ids (comma separated)",
-        default: "all"
-      },
-      {
-        name: "profile",
-        text: "profile name"
-      },
-      {
-        name: "verbose",
-        text: "display additional details",
-        default: "false"
-      },
-      {
-        name: "display",
-        text: "X display",
-        default: ":0"
-      }
-    ]
+    variables: [VARIABLES.GPUS, VARIABLES.FILTER_BY_PROFILE, VARIABLES.VERBOSE, VARIABLES.DISPLAY]
   }
 };
 
-const resetOverclock = {
+const RESET_OVERCLOCK = {
   value: "reset",
   execute: Client.resetOverclock,
   help: {
     description: "reset GPU overclock",
-    variables: [
-      {
-        name: "gpus",
-        text: "list of GPUs ids (comma separated)",
-        default: "all"
-      },
-      {
-        name: "verbose",
-        text: "display additional details",
-        default: "false"
-      },
-      {
-        name: "display",
-        text: "X display",
-        default: ":0"
-      }
-    ]
+    variables: [VARIABLES.GPUS, VARIABLES.VERBOSE, VARIABLES.DISPLAY]
   }
 };
 
-const listProfile = {
+const LIST_PROFILE = {
   value: "list",
   execute: Client.listProfile,
   help: {
     description: "list profiles",
-    variables: [
-      {
-        name: "profile",
-        text: "filter profile name (optional)",
-        default: ""
-      },
-      {
-        name: "gpu",
-        text: "filter gpu (optional)",
-        default: ""
-      },
-      {
-        name: "tag",
-        text: "filter tag (optional)",
-        default: ""
-      },
-      {
-        name: "display",
-        text: "X display",
-        default: ":0"
-      }
-    ]
+    variables: [VARIABLES.FILTER_BY_PROFILE, VARIABLES.FILTER_BY_GPU, VARIABLES.FILTER_BY_TAG, VARIABLES.DISPLAY]
   }
 };
 
-const removeProfile = {
+const REMOVE_PROFILE = {
   value: "remove",
   execute: Client.removeProfile,
   help: {
     description: "remove profiles",
-    variables: [
-      {
-        name: "profile",
-        text: "filter profile name (optional)",
-        default: ""
-      },
-      {
-        name: "gpu",
-        text: "filter gpu (optional)",
-        default: ""
-      },
-      {
-        name: "tag",
-        text: "filter tag (optional)",
-        default: ""
-      },
-      {
-        name: "display",
-        text: "X display",
-        default: ":0"
-      }
-    ]
+    variables: [VARIABLES.FILTER_BY_PROFILE, VARIABLES.FILTER_BY_GPU, VARIABLES.FILTER_BY_TAG, VARIABLES.DISPLAY]
   }
 };
 
@@ -291,7 +192,7 @@ const config = {
     {
       name: "main",
       commands: [
-        gpuStatusReport,
+        GPU_STATUS_REPORT,
         {
           value: "monitor",
           execute: ["profile:monitor"],
@@ -317,15 +218,15 @@ const config = {
     },
     {
       name: "monitor",
-      commands: [monitorStart]
+      commands: [MONITOR_START]
     },
     {
       name: "overclock",
-      commands: [currentOverclock, setOverclock, saveOverclock, loadOverclock, resetOverclock]
+      commands: [CURRENT_OVERCLOCK, SET_OVERCLOCK, SAVE_OVERCLOCK, LOAD_OVERCLOCK, RESET_OVERCLOCK]
     },
     {
       name: "profile",
-      commands: [listProfile, removeProfile]
+      commands: [LIST_PROFILE, REMOVE_PROFILE]
     }
   ]
 };
