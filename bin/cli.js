@@ -72,6 +72,11 @@ const VARIABLES = {
     text: "display additional details",
     default: "false"
   },
+  SILENT: {
+    name: "silent",
+    text: "does not output change report",
+    default: "false"
+  },
   DISPLAY: {
     name: "display",
     text: "X display",
@@ -107,7 +112,7 @@ const MONITOR_START = {
   execute: Client.startAgent,
   help: {
     description: "start GPU agent",
-    variables: [VARIABLES.INTERVAL, VARIABLES.TEMPERATURE, VARIABLES.DISPLAY]
+    variables: [VARIABLES.INTERVAL, VARIABLES.TEMPERATURE, VARIABLES.SILENT, VARIABLES.DISPLAY]
   }
 };
 
