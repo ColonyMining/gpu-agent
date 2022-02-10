@@ -103,7 +103,7 @@ const GPU_STATUS_REPORT = {
   execute: Client.status,
   help: {
     description: "display the status of GPUs",
-    variables: [VARIABLES.GPUS, VARIABLES.WATCH, VARIABLES.DISPLAY]
+    variables: [VARIABLES.GPUS, VARIABLES.WATCH, VARIABLES.INTERVAL, VARIABLES.DISPLAY]
   }
 };
 
