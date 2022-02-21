@@ -1,0 +1,74 @@
+Unable to init server: Could not connect: Connection refused
+libEGL warning: DRI3: Screen seems not DRI3 capable
+libEGL warning: DRI2: failed to authenticate
+libEGL warning: MESA-LOADER: failed to open swrast: /usr/lib64/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib64/dri)
+
+libEGL warning: DRI3: Screen seems not DRI3 capable
+libEGL warning: DRI2: failed to authenticate
+libEGL warning: MESA-LOADER: failed to open swrast: /usr/lib64/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib64/dri)
+
+libEGL warning: DRI3: Screen seems not DRI3 capable
+libEGL warning: DRI2: failed to authenticate
+libEGL warning: MESA-LOADER: failed to open swrast: /usr/lib64/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib64/dri)
+
+libEGL warning: DRI3: Screen seems not DRI3 capable
+libEGL warning: DRI2: failed to authenticate
+libEGL warning: MESA-LOADER: failed to open swrast: /usr/lib64/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib64/dri)
+
+libEGL warning: DRI3: Screen seems not DRI3 capable
+libEGL warning: DRI2: failed to authenticate
+libEGL warning: MESA-LOADER: failed to open swrast: /usr/lib64/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib64/dri)
+
+libEGL warning: DRI3: Screen seems not DRI3 capable
+libEGL warning: DRI2: failed to authenticate
+libEGL warning: MESA-LOADER: failed to open swrast: /usr/lib64/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib64/dri)
+
+
+  Attribute 'GPUCurrentFanSpeed' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:0]): 55.
+    The valid values for 'GPUCurrentFanSpeed' are in the range 0 - 100 (inclusive).
+    'GPUCurrentFanSpeed' is a read-only attribute.
+    'GPUCurrentFanSpeed' can use the following target types: Fan.
+  Attribute 'GPUCurrentFanSpeed' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:1]): 62.
+    The valid values for 'GPUCurrentFanSpeed' are in the range 0 - 100 (inclusive).
+    'GPUCurrentFanSpeed' is a read-only attribute.
+    'GPUCurrentFanSpeed' can use the following target types: Fan.
+  Attribute 'GPUCurrentFanSpeed' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:2]): 56.
+    The valid values for 'GPUCurrentFanSpeed' are in the range 0 - 100 (inclusive).
+    'GPUCurrentFanSpeed' is a read-only attribute.
+    'GPUCurrentFanSpeed' can use the following target types: Fan.
+  Attribute 'GPUCurrentFanSpeed' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:3]): 62.
+    The valid values for 'GPUCurrentFanSpeed' are in the range 0 - 100 (inclusive).
+    'GPUCurrentFanSpeed' is a read-only attribute.
+    'GPUCurrentFanSpeed' can use the following target types: Fan.
+  Attribute 'GPUCurrentFanSpeed' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:4]): 53.
+    The valid values for 'GPUCurrentFanSpeed' are in the range 0 - 100 (inclusive).
+    'GPUCurrentFanSpeed' is a read-only attribute.
+    'GPUCurrentFanSpeed' can use the following target types: Fan.
+  Attribute 'GPUCurrentFanSpeed' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:5]): 58.
+    The valid values for 'GPUCurrentFanSpeed' are in the range 0 - 100 (inclusive).
+    'GPUCurrentFanSpeed' is a read-only attribute.
+    'GPUCurrentFanSpeed' can use the following target types: Fan.
+  Attribute 'GPUCurrentFanSpeed' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:6]): 74.
+    The valid values for 'GPUCurrentFanSpeed' are in the range 0 - 100 (inclusive).
+    'GPUCurrentFanSpeed' is a read-only attribute.
+    'GPUCurrentFanSpeed' can use the following target types: Fan.
+  Attribute 'GPUCurrentFanSpeed' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:7]): 71.
+    The valid values for 'GPUCurrentFanSpeed' are in the range 0 - 100 (inclusive).
+    'GPUCurrentFanSpeed' is a read-only attribute.
+    'GPUCurrentFanSpeed' can use the following target types: Fan.
+  Attribute 'GPUCurrentFanSpeed' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:8]): 96.
+    The valid values for 'GPUCurrentFanSpeed' are in the range 0 - 100 (inclusive).
+    'GPUCurrentFanSpeed' is a read-only attribute.
+    'GPUCurrentFanSpeed' can use the following target types: Fan.
+  Attribute 'GPUCurrentFanSpeed' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:9]): 55.
+    The valid values for 'GPUCurrentFanSpeed' are in the range 0 - 100 (inclusive).
+    'GPUCurrentFanSpeed' is a read-only attribute.
+    'GPUCurrentFanSpeed' can use the following target types: Fan.
+  Attribute 'GPUCurrentFanSpeed' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:10]): 32.
+    The valid values for 'GPUCurrentFanSpeed' are in the range 0 - 100 (inclusive).
+    'GPUCurrentFanSpeed' is a read-only attribute.
+    'GPUCurrentFanSpeed' can use the following target types: Fan.
+  Attribute 'GPUCurrentFanSpeed' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:11]): 42.
+    The valid values for 'GPUCurrentFanSpeed' are in the range 0 - 100 (inclusive).
+    'GPUCurrentFanSpeed' is a read-only attribute.
+    'GPUCurrentFanSpeed' can use the following target types: Fan.

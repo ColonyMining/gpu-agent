@@ -1,0 +1,189 @@
+Unable to init server: Could not connect: Connection refused
+libEGL warning: DRI3: Screen seems not DRI3 capable
+libEGL warning: DRI2: failed to authenticate
+libEGL warning: MESA-LOADER: failed to open swrast: /usr/lib64/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib64/dri)
+
+libEGL warning: DRI3: Screen seems not DRI3 capable
+libEGL warning: DRI2: failed to authenticate
+libEGL warning: MESA-LOADER: failed to open swrast: /usr/lib64/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib64/dri)
+
+libEGL warning: DRI3: Screen seems not DRI3 capable
+libEGL warning: DRI2: failed to authenticate
+libEGL warning: MESA-LOADER: failed to open swrast: /usr/lib64/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib64/dri)
+
+libEGL warning: DRI3: Screen seems not DRI3 capable
+libEGL warning: DRI2: failed to authenticate
+libEGL warning: MESA-LOADER: failed to open swrast: /usr/lib64/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib64/dri)
+
+libEGL warning: DRI3: Screen seems not DRI3 capable
+libEGL warning: DRI2: failed to authenticate
+libEGL warning: MESA-LOADER: failed to open swrast: /usr/lib64/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib64/dri)
+
+libEGL warning: DRI3: Screen seems not DRI3 capable
+libEGL warning: DRI2: failed to authenticate
+libEGL warning: MESA-LOADER: failed to open swrast: /usr/lib64/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib64/dri)
+
+
+6 GPUs on 2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0
+
+    [0] 2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[gpu:0] (NVIDIA GeForce RTX 3070)
+
+      Has the following names:
+        GPU-0
+        GPU-ceb76d0f-a583-0b70-6d4d-b28358ced90c
+
+      Is driving the following X Screen:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0.0 (X Screen 0)
+
+      Supports the following Display Devices:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:0] (HDMI-0) (connected)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:1] (DP-0)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:2] (DP-1)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:3] (DP-2)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:4] (DP-3)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:5] (DP-4)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:6] (DP-5)
+
+      Is not connected to any Frame Lock Device.
+
+      Is connected to the following Fans:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:1] (Fan 1)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:0] (Fan 0)
+
+      Is connected to the following Thermal Sensor:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[thermalsensor:0] (Thermal Sensor 0)
+
+    [1] 2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[gpu:1] (NVIDIA GeForce RTX 3070)
+
+      Has the following names:
+        GPU-1
+        GPU-76028691-18c8-f3df-f555-aae8aba4b658
+
+      Is driving the following X Screen:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0.1 (X Screen 1)
+
+      Supports the following Display Devices:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:7] (HDMI-0)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:8] (DP-0)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:9] (DP-1)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:10] (DP-2)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:11] (DP-3)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:12] (DP-4)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:13] (DP-5)
+
+      Is not connected to any Frame Lock Device.
+
+      Is connected to the following Fans:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:3] (Fan 3)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:2] (Fan 2)
+
+      Is connected to the following Thermal Sensor:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[thermalsensor:1] (Thermal Sensor 1)
+
+    [2] 2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[gpu:2] (NVIDIA GeForce RTX 3070)
+
+      Has the following names:
+        GPU-2
+        GPU-9fb8fedb-d8d2-fdb3-7665-792d81db2d64
+
+      Is driving the following X Screen:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0.2 (X Screen 2)
+
+      Supports the following Display Devices:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:14] (HDMI-0)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:15] (DP-0)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:16] (DP-1)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:17] (DP-2)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:18] (DP-3)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:19] (DP-4)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:20] (DP-5)
+
+      Is not connected to any Frame Lock Device.
+
+      Is connected to the following Fans:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:5] (Fan 5)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:4] (Fan 4)
+
+      Is connected to the following Thermal Sensor:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[thermalsensor:2] (Thermal Sensor 2)
+
+    [3] 2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[gpu:3] (NVIDIA GeForce RTX 3070)
+
+      Has the following names:
+        GPU-3
+        GPU-30de0ac8-3777-9d20-83b9-fdcfaa900f8d
+
+      Is driving the following X Screen:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0.3 (X Screen 3)
+
+      Supports the following Display Devices:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:21] (HDMI-0)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:22] (DP-0)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:23] (DP-1)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:24] (DP-2)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:25] (DP-3)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:26] (DP-4)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:27] (DP-5)
+
+      Is not connected to any Frame Lock Device.
+
+      Is connected to the following Fans:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:7] (Fan 7)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:6] (Fan 6)
+
+      Is connected to the following Thermal Sensor:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[thermalsensor:3] (Thermal Sensor 3)
+
+    [4] 2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[gpu:4] (NVIDIA GeForce RTX 3090)
+
+      Has the following names:
+        GPU-4
+        GPU-fa274d48-c095-f922-2230-2c1aa3e20212
+
+      Is driving the following X Screen:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0.4 (X Screen 4)
+
+      Supports the following Display Devices:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:28] (HDMI-0)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:29] (DP-0)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:30] (DP-1)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:31] (DP-2)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:32] (DP-3)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:33] (DP-4)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:34] (DP-5)
+
+      Is not connected to any Frame Lock Device.
+
+      Is connected to the following Fans:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:9] (Fan 9)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:8] (Fan 8)
+
+      Is connected to the following Thermal Sensor:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[thermalsensor:4] (Thermal Sensor 4)
+
+    [5] 2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[gpu:5] (NVIDIA GeForce RTX 3090)
+
+      Has the following names:
+        GPU-5
+        GPU-c4c7f312-5ba9-aaa1-bf26-cf0ea24836b3
+
+      Is driving the following X Screen:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0.5 (X Screen 5)
+
+      Supports the following Display Devices:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:35] (HDMI-0)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:36] (DP-0)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:37] (DP-1)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:38] (DP-2)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:39] (DP-3)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:40] (DP-4)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[dpy:41] (DP-5)
+
+      Is not connected to any Frame Lock Device.
+
+      Is connected to the following Fans:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:11] (Fan 11)
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[fan:10] (Fan 10)
+
+      Is connected to the following Thermal Sensor:
+        2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[thermalsensor:5] (Thermal Sensor 5)

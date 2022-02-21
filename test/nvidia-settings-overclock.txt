@@ -1,0 +1,99 @@
+Unable to init server: Could not connect: Connection refused
+libEGL warning: DRI3: Screen seems not DRI3 capable
+libEGL warning: DRI2: failed to authenticate
+libEGL warning: MESA-LOADER: failed to open swrast: /usr/lib64/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib64/dri)
+
+libEGL warning: DRI3: Screen seems not DRI3 capable
+libEGL warning: DRI2: failed to authenticate
+libEGL warning: MESA-LOADER: failed to open swrast: /usr/lib64/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib64/dri)
+
+libEGL warning: DRI3: Screen seems not DRI3 capable
+libEGL warning: DRI2: failed to authenticate
+libEGL warning: MESA-LOADER: failed to open swrast: /usr/lib64/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib64/dri)
+
+libEGL warning: DRI3: Screen seems not DRI3 capable
+libEGL warning: DRI2: failed to authenticate
+libEGL warning: MESA-LOADER: failed to open swrast: /usr/lib64/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib64/dri)
+
+libEGL warning: DRI3: Screen seems not DRI3 capable
+libEGL warning: DRI2: failed to authenticate
+libEGL warning: MESA-LOADER: failed to open swrast: /usr/lib64/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib64/dri)
+
+libEGL warning: DRI3: Screen seems not DRI3 capable
+libEGL warning: DRI2: failed to authenticate
+libEGL warning: MESA-LOADER: failed to open swrast: /usr/lib64/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib64/dri)
+
+
+  Attribute 'GPUGraphicsClockOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0.0): -200.
+    The valid values for 'GPUGraphicsClockOffset' are in the range -1000 - 1000 (inclusive).
+    'GPUGraphicsClockOffset' can use the following target types: X Screen, GPU.
+  Attribute 'GPUGraphicsClockOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0.1): -200.
+    The valid values for 'GPUGraphicsClockOffset' are in the range -1000 - 1000 (inclusive).
+    'GPUGraphicsClockOffset' can use the following target types: X Screen, GPU.
+  Attribute 'GPUGraphicsClockOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0.2): -200.
+    The valid values for 'GPUGraphicsClockOffset' are in the range -1000 - 1000 (inclusive).
+    'GPUGraphicsClockOffset' can use the following target types: X Screen, GPU.
+  Attribute 'GPUGraphicsClockOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0.3): -200.
+    The valid values for 'GPUGraphicsClockOffset' are in the range -1000 - 1000 (inclusive).
+    'GPUGraphicsClockOffset' can use the following target types: X Screen, GPU.
+  Attribute 'GPUGraphicsClockOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0.4): -200.
+    The valid values for 'GPUGraphicsClockOffset' are in the range -1000 - 1000 (inclusive).
+    'GPUGraphicsClockOffset' can use the following target types: X Screen, GPU.
+  Attribute 'GPUGraphicsClockOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0.5): -200.
+    The valid values for 'GPUGraphicsClockOffset' are in the range -1000 - 1000 (inclusive).
+    'GPUGraphicsClockOffset' can use the following target types: X Screen, GPU.
+  Attribute 'GPUGraphicsClockOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[gpu:0]): -200.
+    The valid values for 'GPUGraphicsClockOffset' are in the range -1000 - 1000 (inclusive).
+    'GPUGraphicsClockOffset' can use the following target types: X Screen, GPU.
+  Attribute 'GPUGraphicsClockOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[gpu:1]): -200.
+    The valid values for 'GPUGraphicsClockOffset' are in the range -1000 - 1000 (inclusive).
+    'GPUGraphicsClockOffset' can use the following target types: X Screen, GPU.
+  Attribute 'GPUGraphicsClockOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[gpu:2]): -200.
+    The valid values for 'GPUGraphicsClockOffset' are in the range -1000 - 1000 (inclusive).
+    'GPUGraphicsClockOffset' can use the following target types: X Screen, GPU.
+  Attribute 'GPUGraphicsClockOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[gpu:3]): -200.
+    The valid values for 'GPUGraphicsClockOffset' are in the range -1000 - 1000 (inclusive).
+    'GPUGraphicsClockOffset' can use the following target types: X Screen, GPU.
+  Attribute 'GPUGraphicsClockOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[gpu:4]): -200.
+    The valid values for 'GPUGraphicsClockOffset' are in the range -1000 - 1000 (inclusive).
+    'GPUGraphicsClockOffset' can use the following target types: X Screen, GPU.
+  Attribute 'GPUGraphicsClockOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[gpu:5]): -200.
+    The valid values for 'GPUGraphicsClockOffset' are in the range -1000 - 1000 (inclusive).
+    'GPUGraphicsClockOffset' can use the following target types: X Screen, GPU.
+
+  Attribute 'GPUMemoryTransferRateOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0.0): 2600.
+    The valid values for 'GPUMemoryTransferRateOffset' are in the range -2000 - 6000 (inclusive).
+    'GPUMemoryTransferRateOffset' can use the following target types: X Screen, GPU.
+  Attribute 'GPUMemoryTransferRateOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0.1): 2600.
+    The valid values for 'GPUMemoryTransferRateOffset' are in the range -2000 - 6000 (inclusive).
+    'GPUMemoryTransferRateOffset' can use the following target types: X Screen, GPU.
+  Attribute 'GPUMemoryTransferRateOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0.2): 2600.
+    The valid values for 'GPUMemoryTransferRateOffset' are in the range -2000 - 6000 (inclusive).
+    'GPUMemoryTransferRateOffset' can use the following target types: X Screen, GPU.
+  Attribute 'GPUMemoryTransferRateOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0.3): 2600.
+    The valid values for 'GPUMemoryTransferRateOffset' are in the range -2000 - 6000 (inclusive).
+    'GPUMemoryTransferRateOffset' can use the following target types: X Screen, GPU.
+  Attribute 'GPUMemoryTransferRateOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0.4): 2400.
+    The valid values for 'GPUMemoryTransferRateOffset' are in the range -2000 - 6000 (inclusive).
+    'GPUMemoryTransferRateOffset' can use the following target types: X Screen, GPU.
+  Attribute 'GPUMemoryTransferRateOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0.5): 2400.
+    The valid values for 'GPUMemoryTransferRateOffset' are in the range -2000 - 6000 (inclusive).
+    'GPUMemoryTransferRateOffset' can use the following target types: X Screen, GPU.
+  Attribute 'GPUMemoryTransferRateOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[gpu:0]): 2600.
+    The valid values for 'GPUMemoryTransferRateOffset' are in the range -2000 - 6000 (inclusive).
+    'GPUMemoryTransferRateOffset' can use the following target types: X Screen, GPU.
+  Attribute 'GPUMemoryTransferRateOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[gpu:1]): 2600.
+    The valid values for 'GPUMemoryTransferRateOffset' are in the range -2000 - 6000 (inclusive).
+    'GPUMemoryTransferRateOffset' can use the following target types: X Screen, GPU.
+  Attribute 'GPUMemoryTransferRateOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[gpu:2]): 2600.
+    The valid values for 'GPUMemoryTransferRateOffset' are in the range -2000 - 6000 (inclusive).
+    'GPUMemoryTransferRateOffset' can use the following target types: X Screen, GPU.
+  Attribute 'GPUMemoryTransferRateOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[gpu:3]): 2600.
+    The valid values for 'GPUMemoryTransferRateOffset' are in the range -2000 - 6000 (inclusive).
+    'GPUMemoryTransferRateOffset' can use the following target types: X Screen, GPU.
+  Attribute 'GPUMemoryTransferRateOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[gpu:4]): 2400.
+    The valid values for 'GPUMemoryTransferRateOffset' are in the range -2000 - 6000 (inclusive).
+    'GPUMemoryTransferRateOffset' can use the following target types: X Screen, GPU.
+  Attribute 'GPUMemoryTransferRateOffset' (2603-8001-6b03-a634-aaa1-59ff-fe97-e8b6.res6.spectrum.com:0[gpu:5]): 2400.
+    The valid values for 'GPUMemoryTransferRateOffset' are in the range -2000 - 6000 (inclusive).
+    'GPUMemoryTransferRateOffset' can use the following target types: X Screen, GPU.
