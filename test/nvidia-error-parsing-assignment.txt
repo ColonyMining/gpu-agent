@@ -1,0 +1,13 @@
+Unable to init server: Could not connect: Connection refused
+
+ERROR: Error parsing assignment
+       '[gpu:7]/GPUGraphicsClockOffsetAllPerformanceLevels=-200'
+       (Unrecognized attribute name).
+
+
+
+Unable to init server: Could not connect: Connection refused
+
+
+ERROR: Error assigning value -200 to attribute 'GPUGraphicsClockOffset' (Genesis:0[gpu:7]) as specified in assignment
+       '[gpu:7]/GPUGraphicsClockOffset[1]=-200' (Unknown Error).
