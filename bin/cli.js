@@ -99,37 +99,37 @@ const VARIABLES = {
 };
 
 const GPU_STATUS_REPORT = {
-  value: "status",
+  name: "status",
   execute: Client.status,
   help: {
-    description: "display the status of GPUs",
+    text: "display the status of GPUs",
     variables: [VARIABLES.GPUS, VARIABLES.WATCH, VARIABLES.INTERVAL, VARIABLES.DISPLAY]
   }
 };
 
 const MONITOR_START = {
-  value: "start",
+  name: "start",
   execute: Client.startAgent,
   help: {
-    description: "start GPU agent",
+    text: "start GPU agent",
     variables: [VARIABLES.INTERVAL, VARIABLES.TEMPERATURE, VARIABLES.SILENT, VARIABLES.DISPLAY]
   }
 };
 
 const CURRENT_OVERCLOCK = {
-  value: "current",
+  name: "current",
   execute: Client.currentOverclock,
   help: {
-    description: "display current overclock settings",
+    text: "display current overclock settings",
     variables: [VARIABLES.GPUS, VARIABLES.DISPLAY]
   }
 };
 
 const SET_OVERCLOCK = {
-  value: "set",
+  name: "set",
   execute: Client.setOverclock,
   help: {
-    description: "set overclock to GPU",
+    text: "set overclock to GPU",
     variables: [
       VARIABLES.GPUS,
       VARIABLES.TAG,
@@ -148,46 +148,46 @@ const SET_OVERCLOCK = {
 };
 
 const SAVE_OVERCLOCK = {
-  value: "save",
+  name: "save",
   execute: Client.saveOverclock,
   help: {
-    description: "save overclock profile configuration",
+    text: "save overclock profile configuration",
     variables: [VARIABLES.GPUS, VARIABLES.FILTER_BY_PROFILE, VARIABLES.HASHRATE, VARIABLES.DISPLAY]
   }
 };
 
 const LOAD_OVERCLOCK = {
-  value: "load",
+  name: "load",
   execute: Client.loadOverclock,
   help: {
-    description: "load overclock profile configuration",
+    text: "load overclock profile configuration",
     variables: [VARIABLES.GPUS, VARIABLES.FILTER_BY_PROFILE, VARIABLES.VERBOSE, VARIABLES.DISPLAY]
   }
 };
 
 const RESET_OVERCLOCK = {
-  value: "reset",
+  name: "reset",
   execute: Client.resetOverclock,
   help: {
-    description: "reset GPU overclock",
+    text: "reset GPU overclock",
     variables: [VARIABLES.GPUS, VARIABLES.VERBOSE, VARIABLES.DISPLAY]
   }
 };
 
 const LIST_PROFILE = {
-  value: "list",
+  name: "list",
   execute: Client.listProfile,
   help: {
-    description: "list profiles",
+    text: "list profiles",
     variables: [VARIABLES.FILTER_BY_PROFILE, VARIABLES.FILTER_BY_GPU, VARIABLES.FILTER_BY_TAG, VARIABLES.DISPLAY]
   }
 };
 
 const REMOVE_PROFILE = {
-  value: "remove",
+  name: "remove",
   execute: Client.removeProfile,
   help: {
-    description: "remove profiles",
+    text: "remove profiles",
     variables: [VARIABLES.FILTER_BY_PROFILE, VARIABLES.FILTER_BY_GPU, VARIABLES.FILTER_BY_TAG, VARIABLES.DISPLAY]
   }
 };
@@ -199,24 +199,24 @@ const config = {
       commands: [
         GPU_STATUS_REPORT,
         {
-          value: "monitor",
+          name: "monitor",
           execute: ["profile:monitor"],
           help: {
-            description: "GPU monitor"
+            text: "GPU monitor"
           }
         },
         {
-          value: "overclock",
+          name: "overclock",
           execute: ["profile:overclock"],
           help: {
-            description: "GPU overclock"
+            text: "GPU overclock"
           }
         },
         {
-          value: "profile",
+          name: "profile",
           execute: ["profile:profile"],
           help: {
-            description: "GPU profiles"
+            text: "GPU profiles"
           }
         }
       ]
