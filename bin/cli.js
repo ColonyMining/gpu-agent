@@ -1,4 +1,4 @@
-const { Engine } = require("aux4");
+const { Engine } = require("@aux4/engine");
 const Client = require("../lib/client/Client");
 
 const VARIABLES = {
