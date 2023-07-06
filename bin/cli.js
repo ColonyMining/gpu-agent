@@ -238,7 +238,7 @@ const config = {
 
 process.title = "gpu-agent";
 
-const engine = Engine({ aux4: config });
+const engine = new Engine({ aux4: config });
 
 const args = process.argv.splice(2);
 engine.run(args);
